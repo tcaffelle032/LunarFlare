@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 			playerMovement(player);
 		}
 		else if(!Input.anyKey) {
-			player.rigidbody.velocity = Vector3.zero;
+			player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
 		}
 
 
