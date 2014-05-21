@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
 	public int playerSpeed;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 
 	// Update is called once per frame
@@ -19,12 +19,14 @@ public class Player : MonoBehaviour {
 			player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
 			playerStopped(false);
 		}
-		player.transform.rotation =  Quaternion.identity;
+		player.transform.rotation=Quaternion.identity;	
+		Camera camera = Camera.FindObjectOfType<Camera>();
+		camera.transform.LookAt(player.transform.position);
+
 	}
 
 	void playerMovement(GameObject player){
 		Animator animate = this.GetComponent<Animator>();
-		AnimatorStateInfo stateInfo = animate.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetKeyDown(KeyCode.W)){
 			player.rigidbody.velocity = player.transform.forward * playerSpeed;		
