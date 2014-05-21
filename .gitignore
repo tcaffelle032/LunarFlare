@@ -5,3 +5,6 @@ Library
 *.sln
 LunarFlare/Code/Code-csharp.sln
 *.sln
+LunarFlare/Code/Temp/UnityLockfile
+LunarFlare/Code/Temp/UnityLockfile
+*.csproj
