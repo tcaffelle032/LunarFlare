@@ -15,16 +15,10 @@ Platform assembly: C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Cod
 Loading C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.047 seconds
+- Completed reload, in  0.075 seconds
 desktop: 1600x900 60Hz; virtual: 3200x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: needs reset, doing it
-FullResetD3DDevice
-ResetD3DDevice
-dev->Reset
-D3Dwindow device not lost anymore
 Actor::updateMassFromShapes: Compute mesh inertia tensor failed for one of the actor's mesh shapes! Please change mesh geometry or supply a tensor manually!
  
 (Filename: ..\..\Physics\src\NpActor.cpp Line: 134)

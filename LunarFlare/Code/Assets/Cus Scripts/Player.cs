@@ -6,11 +6,11 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		EventManger.OnKeyPress += playerMovement;
+		EventManger.OnKeyPress += playerMovement; //Subscribe to the event
 	}
 
 	void OnDisable(){
-		EventManger.OnKeyPress -= playerMovement;
+		EventManger.OnKeyPress -= playerMovement; //Unsubscribe, very important
 	}
 
 	// Update is called once per frame
@@ -21,17 +21,23 @@ public class Player : MonoBehaviour {
 
 			playerStopped(false);
 		}
-		player.transform.rotation=Quaternion.identity;	
-		Camera camera = Camera.FindObjectOfType<Camera>();
+		player.transform.rotation=Quaternion.identity;	//makes sure the player stays upright
+
+		Camera camera = Camera.FindObjectOfType<Camera>();// keeps camera focused on player
 		camera.transform.LookAt(player.transform.position);
 
 	}
 
 	void playerMovement(){
+		//find both the camera and the player in the scene to be manipulated
 		var player = GameObject.Find("Player");
 		var camera = GameObject.Find("Main Camera");
+		//Animator for animation
 		Animator animate = this.GetComponent<Animator>();
 
+		//for each of the movement functions we increase the players velocity
+		//not the direct postion. That way it can be handeled by the physics 
+		//engine.
 		if(Input.GetKeyDown(KeyCode.W)){
 			player.rigidbody.velocity = player.transform.forward * playerSpeed;		
 			animate.SetBool("Walk_Up",true);
@@ -44,10 +50,7 @@ public class Player : MonoBehaviour {
 		else if(Input.GetKeyDown(KeyCode.D)){
 			player.rigidbody.velocity = player.transform.right * playerSpeed;	
 			animate.SetBool("Walk_Right",true);
-
-
 			camera.rigidbody.velocity = camera.transform.right * playerSpeed;
-
 		}
 		else if(Input.GetKeyDown(KeyCode.A)){
 			player.rigidbody.velocity = -player.transform.right * playerSpeed;
@@ -56,9 +59,10 @@ public class Player : MonoBehaviour {
 			camera.rigidbody.velocity = -camera.transform.right * playerSpeed;
 		}
 	}
+	//Idle function to make sure everything stays in place and the correct animation is called
+	//Extra steps are taken to make sure the player is truly idle
 	void playerStopped(bool isIdle){
 		Animator animate = this.GetComponent<Animator>();
-		AnimatorStateInfo stateInfo = animate.GetCurrentAnimatorStateInfo(0);
 		var player = GameObject.Find("Player");
 		var camera = GameObject.Find("Main Camera");
 
