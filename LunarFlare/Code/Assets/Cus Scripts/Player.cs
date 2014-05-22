@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 		GameObject player = GameObject.Find("Player");		 
 
 		 if(!Input.anyKey) {
-			player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
+
 			playerStopped(false);
 		}
 		player.transform.rotation=Quaternion.identity;	
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
 
 	void playerMovement(){
 		var player = GameObject.Find("Player");
+		var camera = GameObject.Find("Main Camera");
 		Animator animate = this.GetComponent<Animator>();
 
 		if(Input.GetKeyDown(KeyCode.W)){
@@ -44,21 +45,30 @@ public class Player : MonoBehaviour {
 			player.rigidbody.velocity = player.transform.right * playerSpeed;	
 			animate.SetBool("Walk_Right",true);
 
+
+			camera.rigidbody.velocity = camera.transform.right * playerSpeed;
+
 		}
 		else if(Input.GetKeyDown(KeyCode.A)){
 			player.rigidbody.velocity = -player.transform.right * playerSpeed;
 			player.transform.rotation = new Quaternion(0,-1,0,0);
 			animate.SetBool("Walk_Left",true);
+			camera.rigidbody.velocity = -camera.transform.right * playerSpeed;
 		}
 	}
 	void playerStopped(bool isIdle){
 		Animator animate = this.GetComponent<Animator>();
 		AnimatorStateInfo stateInfo = animate.GetCurrentAnimatorStateInfo(0);
+		var player = GameObject.Find("Player");
+		var camera = GameObject.Find("Main Camera");
 
 		animate.SetBool("Walk_Down",false);
 		animate.SetBool("Walk_Right",false);
 		animate.SetBool("Walk_Left",false);
 		animate.SetBool("Walk_Up",false);
+
+		player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
+		camera.rigidbody.velocity = camera.transform.right *0;
 	}
 
 }
