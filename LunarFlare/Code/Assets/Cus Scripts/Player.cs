@@ -6,16 +6,18 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		EventManger.OnKeyPress += playerMovement;
+	}
+
+	void OnDisable(){
+		EventManger.OnKeyPress -= playerMovement;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		GameObject player = GameObject.Find("Player");
-		 
-		if(Input.anyKey){
-			playerMovement(player);
-		}
-		else if(!Input.anyKey) {
+		GameObject player = GameObject.Find("Player");		 
+
+		 if(!Input.anyKey) {
 			player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
 			playerStopped(false);
 		}
@@ -25,7 +27,8 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void playerMovement(GameObject player){
+	void playerMovement(){
+		var player = GameObject.Find("Player");
 		Animator animate = this.GetComponent<Animator>();
 
 		if(Input.GetKeyDown(KeyCode.W)){

@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Cus Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Cus Scripts\EventManager.cs">
     <Files>
-      <File FileName="Assets\Cus Scripts\Player.cs" Line="56" Column="36" />
+      <File FileName="Assets\Cus Scripts\Player.cs" Line="12" Column="18" />
+      <File FileName="Assets\Cus Scripts\EventManager.cs" Line="7" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
