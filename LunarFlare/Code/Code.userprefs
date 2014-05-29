@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Cus Scripts\Player.cs">
     <Files>
-      <File FileName="Assets\Cus Scripts\EventManager.cs" Line="15" Column="1" />
-      <File FileName="Assets\Cus Scripts\Player.cs" Line="36" Column="25" />
-      <File FileName="Assets\Cus Scripts\EventManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Cus Scripts\InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Cus Scripts\EventManager.cs" Line="13" Column="146" />
+      <File FileName="Assets\Cus Scripts\Player.cs" Line="65" Column="52" />
+      <File FileName="Assets\Cus Scripts\InputManager.cs" Line="16" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
