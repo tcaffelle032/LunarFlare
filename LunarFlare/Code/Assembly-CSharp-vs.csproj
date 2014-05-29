@@ -47,8 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Cus Scripts\EventManager.cs" />
+     <Compile Include="Assets\Cus Scripts\Friendly_NPC.cs" />
      <Compile Include="Assets\Cus Scripts\InputManager.cs" />
-     <Compile Include="Assets\Cus Scripts\N_NPC.cs" />
      <Compile Include="Assets\Cus Scripts\Player.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class N_NPC : MonoBehaviour {
+public class Friendly_NPC : MonoBehaviour {
 	float timer = 3;
 	// Use this for initialization
 	void Start () {
