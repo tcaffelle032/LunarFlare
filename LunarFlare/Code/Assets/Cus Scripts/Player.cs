@@ -50,13 +50,13 @@ public class Player : MonoBehaviour {
 		else if(Input.GetKeyDown(KeyCode.D)){
 			player.rigidbody.velocity = player.transform.right * playerSpeed;	
 			animate.SetBool("Walk_Right",true);
-			camera.rigidbody.velocity = camera.transform.right * playerSpeed;
+			camera.rigidbody.velocity = camera.transform.right * playerSpeed/2;
 		}
 		else if(Input.GetKeyDown(KeyCode.A)){
 			player.rigidbody.velocity = -player.transform.right * playerSpeed;
 			player.transform.rotation = new Quaternion(0,-1,0,0);
 			animate.SetBool("Walk_Left",true);
-			camera.rigidbody.velocity = -camera.transform.right * playerSpeed;
+			camera.rigidbody.velocity = -camera.transform.right * playerSpeed/2;
 		}
 	}
 	//Idle function to make sure everything stays in place and the correct animation is called
