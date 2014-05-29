@@ -1,7 +1,7 @@
 Initialize engine version: 4.3.4f1 (e444f76e01cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.3523]
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.3788]
     Renderer: NVIDIA GeForce GTX 550 Ti
     Vendor:   NVIDIA
     VRAM:     977 MB (via DXGI)
@@ -15,11 +15,7 @@ Platform assembly: C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Cod
 Loading C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\TylerHome\Documents\GitHub\LunarFlare\LunarFlare\Code\Executables\LunarFlare_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.075 seconds
+- Completed reload, in  0.306 seconds
 desktop: 1600x900 60Hz; virtual: 3200x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Actor::updateMassFromShapes: Compute mesh inertia tensor failed for one of the actor's mesh shapes! Please change mesh geometry or supply a tensor manually!
- 
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 134)
-
