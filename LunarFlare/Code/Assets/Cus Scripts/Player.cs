@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	public int playerSpeed;
+	bool cameraFov;
+	int cameraDirection;
 	// Use this for initialization
 	void Start () {
 
 		EventManger.OnKeyPress += playerMovement; //Subscribe to the event
 		EventManger.OnPlayerInteraction += playerInteract;
+
+		cameraFov = false;
+		cameraDirection = 0;
 	}
 
 	void OnDisable(){
@@ -28,6 +33,7 @@ public class Player : MonoBehaviour {
 		Camera camera = Camera.FindObjectOfType<Camera>();// keeps camera focused on player
 		camera.transform.LookAt(player.transform.position);
 
+		cameraFOV(camera,cameraFov,cameraDirection);
 
 	}
 
@@ -48,11 +54,18 @@ public class Player : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.W)){
 			player.rigidbody.velocity = player.transform.forward * playerSpeed;		
 			animate.SetBool("Walk_Up",true);
+			cameraFov = true;
+			cameraDirection = 2;
+
+
 		}
 
 		else if(Input.GetKeyDown(KeyCode.S)){
 			player.rigidbody.velocity = -player.transform.forward * playerSpeed;
 			animate.SetBool("Walk_Down",true);
+			cameraFov = true;
+			cameraDirection = 1;
+
 		}
 		else if(Input.GetKeyDown(KeyCode.D)){
 			player.rigidbody.velocity = player.transform.right * playerSpeed;	
@@ -80,6 +93,18 @@ public class Player : MonoBehaviour {
 
 		player.rigidbody.velocity = new Vector3(0,Physics.gravity.y,0);
 		camera.rigidbody.velocity = camera.transform.right *0;
+		cameraFov = false;
 	}
 
+	void cameraFOV(Camera camera,bool moving,int direction){
+		if(moving && direction ==1 && camera.camera.fieldOfView <= 35)
+		{
+			camera.camera.fieldOfView += .25f;
+		}
+		else if (moving && direction ==2 && camera.camera.fieldOfView >= 21)
+		{
+			camera.camera.fieldOfView-= .25f;
+		}
+
+	}
 }
