@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class NPC_Spawner : MonoBehaviour {
-
+	public int NpcNum;
 	// Use this for initialization
 	void Start () {
-		var npcNum = Random.Range(0,5);
-		createNPC(npcNum);
+
+		createNPC(NpcNum);
 
 	}
 	

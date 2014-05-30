@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Friendly_NPC : MonoBehaviour {
 	float timer = 3;
 	// Use this for initialization
 	void Start () {
-	
+		int rnd = Random.Range(0,3);
+		setNPCName(rnd);
 	}
 	
 	// Update is called once per frame
@@ -17,6 +19,8 @@ public class Friendly_NPC : MonoBehaviour {
 		var npc = this.gameObject;
 		npc.transform.rotation = Quaternion.identity;
 	}
+
+
 
 	void NPCMovement(int direction,int speed){
 		var npc = this.gameObject;
@@ -40,5 +44,15 @@ public class Friendly_NPC : MonoBehaviour {
 			break;
 
 		}
+	}
+
+	string setNPCName(int key){
+		Dictionary<int,string> nameList = new Dictionary<int, string>();
+
+		nameList.Add(0,"Robb");
+		nameList.Add(1,"Tyler");
+		nameList.Add(2,"Jason");
+
+		return this.gameObject.name = nameList[key];
 	}
 }
