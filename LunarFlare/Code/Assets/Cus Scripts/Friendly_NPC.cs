@@ -20,7 +20,12 @@ public class Friendly_NPC : MonoBehaviour {
 		npc.transform.rotation = Quaternion.identity;
 	}
 
+	void OnCollisionStay(Collision collision){
+		if(collision.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.Space)){
 
+			EventManger.Interaction(this.gameObject.name);
+		  }
+	}
 
 	void NPCMovement(int direction,int speed){
 		var npc = this.gameObject;

@@ -7,10 +7,12 @@ public class Player : MonoBehaviour {
 	void Start () {
 
 		EventManger.OnKeyPress += playerMovement; //Subscribe to the event
+		EventManger.OnPlayerInteraction += playerInteract;
 	}
 
 	void OnDisable(){
 		EventManger.OnKeyPress -= playerMovement; //Unsubscribe, very important
+		EventManger.OnPlayerInteraction -= playerInteract;
 	}
 
 	// Update is called once per frame
@@ -26,6 +28,11 @@ public class Player : MonoBehaviour {
 		Camera camera = Camera.FindObjectOfType<Camera>();// keeps camera focused on player
 		camera.transform.LookAt(player.transform.position);
 
+
+	}
+
+	void playerInteract(string npcName){
+			Debug.Log(npcName);
 	}
 
 	void playerMovement(){

@@ -17,4 +17,11 @@ public static class EventManger {
 		}
 	}
 
+	public delegate void PlayerInteraction(string name );
+	public static event PlayerInteraction OnPlayerInteraction;
+	public static void Interaction(string name){
+		if(OnPlayerInteraction != null){
+			OnPlayerInteraction(name);
+		}
+	}
 }
